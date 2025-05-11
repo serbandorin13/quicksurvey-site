@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - QuickSurvey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #333; }
+    .container {
+      max-width: 700px;
+      margin: 60px auto;
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #1c7c54;
+    }
+    form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+    form textarea {
+      resize: vertical;
+      height: 120px;
+    }
+    .btn-submit {
+      background: #1c7c54;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn-submit:hover {
+      background: #155c3f;
+    }
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Contactează-ne</h1>
+  <form action="#" method="post">
+    <label for="nume">Nume</label>
+    <input type="text" id="nume" name="nume" required>
+
+    <label for="prenume">Prenume</label>
+    <input type="text" id="prenume" name="prenume" required>
+
+    <label for="telefon">Telefon</label>
+    <input type="tel" id="telefon" name="telefon" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="serviciu">Serviciul dorit</label>
+    <select id="serviciu" name="serviciu" required>
+      <option value="">Selectează un serviciu</option>
+      <option value="prima-intabulare">Prima Intabulare</option>
+      <option value="actualizare">Actualizare</option>
+      <option value="apartamente">Apartamente</option>
+      <option value="trasare">Trasare</option>
+      <option value="ridicari">Ridicări topografice</option>
+    </select>
+
+    <label for="mesaj">Mesaj (opțional)</label>
+    <textarea id="mesaj" name="mesaj"></textarea>
+
+    <button type="submit" class="btn-submit">Trimite</button>
+  </form>
+</div>
+
+<footer>
+  &copy; 2025 QuickSurvey. Toate drepturile rezervate.
+</footer>
+
+</body>
+</html>

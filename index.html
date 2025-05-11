@@ -1,51 +1,107 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuickSurvey - Cadastru și Topografie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuickSurvey - Servicii Cadastru & Topografie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    #loader {
-      position: fixed;
-      top: 0;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; color: #333; line-height: 1.6; background: #f9f9f9; }
+    header { background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+    .nav-container { max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem; }
+    .logo img { height: 40px; }
+    nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+    nav ul li { position: relative; }
+    nav a { text-decoration: none; color: #333; font-weight: 600; }
+    nav ul li:hover > ul { display: block; }
+    nav ul ul {
+      display: none;
+      position: absolute;
+      background: white;
+      top: 2.5rem;
       left: 0;
-      width: 100%;
-      height: 100%;
-      background: #f0f4f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease, visibility 0.5s;
+      min-width: 180px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 4px;
     }
-    #loader.hidden {
-      opacity: 0;
-      visibility: hidden;
+    nav ul ul li { padding: 0.5rem 1rem; }
+    nav ul ul li:hover { background: #f0f0f0; }
+    .hero {
+      padding: 100px 20px 60px;
+      text-align: center;
+      background: #ffffff;
     }
-    #loader img {
-      width: 120px;
-      animation: pulse 1.5s infinite;
+    .hero h1 { font-size: 2.5rem; color: #1c7c54; }
+    .hero p { max-width: 700px; margin: 1rem auto; font-size: 1.1rem; }
+    .btn-contact {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #1c7c54;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
     }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.1); opacity: 0.7; }
+    .contact-section {
+      background: #f1f1f1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .contact-section h2 { margin-bottom: 1rem; color: #1c7c54; }
+    .contact-info { font-size: 1rem; margin-bottom: 0.5rem; }
+    footer {
+      background: #e6e6e6;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <div id="loader">
-    <img src="logo.png" alt="QuickSurvey Loading...">
+
+<header>
+  <div class="nav-container">
+    <div class="logo">
+      <img src="Untitled.png" alt="Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">Servicii ▾</a>
+          <ul>
+            <li><a href="servicii/primainatabulare.html">Prima Intabulare</a></li>
+            <li><a href="servicii/actualizare.html">Actualizare</a></li>
+            <li><a href="servicii/apartamente.html">Apartamente</a></li>
+            <li><a href="servicii/trasare.html">Trasare</a></li>
+            <li><a href="servicii/ridicari.html">Ridicări Topografice</a></li>
+          </ul>
+        </li>
+        <li><a href="portofoliu.html">Portofoliu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <footer>
-    <p>&copy; 2025 QuickSurvey. Toate drepturile rezervate.</p>
-  </footer>
+<section class="hero">
+  <h1>Bine ai venit la QuickSurvey</h1>
+  <p>Suntem o echipă de specialiști în cadastru și topografie, oferind servicii complete pentru persoane fizice și juridice. Rapiditate, acuratețe și profesionalism – acestea sunt valorile care ne definesc.</p>
+  <a href="contact.html" class="btn-contact">Contactează-ne</a>
+</section>
 
-  <script>
-    window.addEventListener("load", () => {
-      document.getElementById("loader").classList.add("hidden");
-    });
-  </script>
+<section class="contact-section">
+  <h2>Informații de contact</h2>
+  <p class="contact-info">Email: contact@quicksurvey.ro</p>
+  <p class="contact-info">Telefon: 0760 000 000</p>
+  <p class="contact-info">Adresă: Strada Exemplu 123, Oraș</p>
+</section>
+
+<footer>
+  &copy; 2025 QuickSurvey. Toate drepturile rezervate.
+</footer>
+
 </body>
 </html>
