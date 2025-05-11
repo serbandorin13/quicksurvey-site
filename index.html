@@ -14,12 +14,32 @@
     nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
     nav ul li { position: relative; }
     nav a { text-decoration: none; color: #333; font-weight: 600; }
-    nav ul li:hover > ul { display: block; }
+    nav ul li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
     nav ul ul {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+
       display: none;
       position: absolute;
       background: white;
-      top: 3.0rem;
+      top: 2.5rem;
       left: 0;
       min-width: 180px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
