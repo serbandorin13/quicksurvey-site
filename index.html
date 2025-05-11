@@ -4,208 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QuickSurvey - Cadastru și Topografie</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Open Sans', sans-serif; color: #212529; background: #f8f9fa; }
-
-    nav {
+    #loader {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
-      background: rgba(30, 58, 138, 0.9);
-      color: white;
+      height: 100%;
+      background: #f0f4f8;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      z-index: 1000;
-    }
-    nav img {
-      height: 40px;
-      margin-right: 10px;
-    }
-    nav .logo {
-      display: flex;
-      align-items: center;
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.5rem;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      background: url('https://images.unsplash.com/photo-1581093588401-0fbc49c8d9f3?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      height: 100vh;
-      color: white;
-      display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      padding-top: 80px;
-      animation: fadeIn 2s ease-in-out;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s;
     }
-    header h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      animation: slideUp 1.2s ease-in-out;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5rem;
-      animation: slideUp 1.5s ease-in-out;
-    }
-    header a {
-      background: #00796B;
-      color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    header a:hover {
-      background: #004D40;
-    }
-
-    section {
-      padding: 5rem 1rem;
-      max-width: 1000px;
-      margin: 0 auto;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-    h2 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #1e3a8a;
-      animation: slideUp 1s ease-in-out;
-    }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-    .service {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-      transform: translateY(30px);
+    #loader.hidden {
       opacity: 0;
-      animation: fadeSlideUp 1s ease forwards;
+      visibility: hidden;
     }
-    .service:nth-child(1) { animation-delay: 0.2s; }
-    .service:nth-child(2) { animation-delay: 0.4s; }
-    .service:nth-child(3) { animation-delay: 0.6s; }
-    .service:nth-child(4) { animation-delay: 0.8s; }
-
-    .service img {
-      width: 40px;
-      margin-bottom: 1rem;
+    #loader img {
+      width: 120px;
+      animation: pulse 1.5s infinite;
     }
-
-    footer {
-      background: #1e3a8a;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    @keyframes slideUp {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeSlideUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="logo.png" alt="Logo QuickSurvey">
-      QuickSurvey
-    </div>
-    <ul>
-      <li><a href="#despre">Despre</a></li>
-      <li><a href="#servicii">Servicii</a></li>
-      <li><a href="#portofoliu">Portofoliu</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <header>
-    <h1>Servicii de Cadastru, Topografie și Cartografiere cu Dronă</h1>
-    <p>Rapid. Precis. Profesionist.</p>
-    <a href="#contact">Cere o ofertă</a>
-  </header>
-
-  <section id="despre">
-    <h2>Despre Noi</h2>
-    <p>QuickSurvey oferă servicii complete de cadastru, topografie și cartografiere cu dronă, realizate cu precizie și eficiență. Echipa noastră de profesioniști are experiență vastă în domeniu și utilizează echipamente moderne pentru a furniza soluții adaptate nevoilor tale.</p>
-  </section>
-
-  <section id="servicii">
-    <h2>Servicii</h2>
-    <div class="services">
-      <div class="service">
-        <img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Cadastru">
-        <h3>Cadastru și Intabulare</h3>
-      </div>
-      <div class="service">
-        <img src="https://img.icons8.com/ios-filled/50/000000/map.png" alt="Topografie">
-        <h3>Ridicări Topografice</h3>
-      </div>
-      <div class="service">
-        <img src="https://img.icons8.com/ios-filled/50/000000/parcel-map.png" alt="Parcelare">
-        <h3>Planuri Parcelare</h3>
-      </div>
-      <div class="service">
-        <img src="https://img.icons8.com/ios-filled/50/000000/drone.png" alt="Dronă">
-        <h3>Cartografiere cu Dronă</h3>
-      </div>
-    </div>
-  </section>
-
-  <section id="portofoliu">
-    <h2>Portofoliu</h2>
-    <p>Proiecte recente vor fi afișate aici – cu imagini și detalii despre lucrările efectuate.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Telefon: 07xx xxx xxx</p>
-    <p>Email: contact@quicksurvey.ro</p>
-    <p>Adresă: Str. Exemplu 1, Oraș, Județ</p>
-  </section>
+  <div id="loader">
+    <img src="logo.png" alt="QuickSurvey Loading...">
+  </div>
 
   <footer>
     <p>&copy; 2025 QuickSurvey. Toate drepturile rezervate.</p>
   </footer>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("loader").classList.add("hidden");
+    });
+  </script>
 </body>
 </html>
